@@ -1,48 +1,66 @@
 
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random - ссылка на функцию
-function getRandomIntInclusive(min, max) {
+function getRandomInclusiveInt(from, to) {
 
-  if (min > max) {
-    const numberConteiner = min;
-    min = max;
-    max = numberConteiner;
+  if (typeof from !== 'number' || typeof to !== 'number' || (from < 0 && to < 0))  {
+    return null;
   }
 
-  if (min === max) {
-    return max;
+  if (from < 0) {
+    from = 0;
   }
 
-  if ((min >= 0 && max > 0) && (min < max)) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  if (to < 0) {
+    to = 0;
   }
-  return NaN;
+
+  if (from === to) {
+    return to;
+  }
+
+  if (from > to) {
+    const numberConteiner = from;
+    from = to;
+    to = numberConteiner;
+  }
+
+  const min = Math.ceil(from);
+  const max = Math.floor(to);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-getRandomIntInclusive(1, 3);
+getRandomInclusiveInt(1, 3);
 
 
-function getRandomLocationPoint(min, max, sign) {
+function getRandomInclusiveNumber(from, to, precision) {
 
-  if (min > max) {
-    const numberConteiner = min;
-    min = max;
-    max = numberConteiner;
+  if (typeof from !== 'number' || typeof to !== 'number' || typeof precision !== 'number' || (from < 0 && to < 0))  {
+    return null;
   }
 
-  if (min === max) {
-    return max;
+  if (from < 0) {
+    from = 0;
   }
 
-  if (sign < 0) {
-    sign *= -1;
+  if (to < 0) {
+    to = 0;
   }
 
-  if ((min >= 0 && max > 0) && (min < max)) {
-    return (Math.floor(Math.random() * (max - min)) + min)+Number(Math.random().toFixed(sign));
+  if (from === to) {
+    return to;
   }
-  return NaN;
+
+  if (from > to) {
+    const numberConteiner = from;
+    from = to;
+    to = numberConteiner;
+  }
+
+  if (precision < 0) {
+    precision *= -1;
+  }
+
+  return +((Math.random() * ((to - from) + from)).toFixed(precision));
 }
 
-getRandomLocationPoint(1, 4, 5);
+getRandomInclusiveNumber(1, 4, 5);
