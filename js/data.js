@@ -1,6 +1,6 @@
 import {getRandomPositiveInteger, getRandomPositiveFloat, getRandomArrayElement} from './util.js';
 
-const OFFERS_COUNT = 10;
+// const OFFERS_COUNT = 10;
 const OFFER_TITLES = ['Купи сейчас и получай тур в подарок', 'Попробуй наше предложение','Не упусти свой шанс'];
 const OFFER_TYPES = ['palace', 'flat', 'house', 'bungalow', 'hotel'];
 const OFFER_CHECKINS = ['12:00', '13:00', '14:00'];
