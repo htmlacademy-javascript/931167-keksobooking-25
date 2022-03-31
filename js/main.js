@@ -1,5 +1,3 @@
-import {makeOffers, makeAuthor} from './data.js';
+import {createUserCard} from './mocks.js';
 
-
-console.log(makeAuthor());
-console.log(makeOffers(10));
+console.log(createUserCard);
