@@ -14,8 +14,27 @@ const getRandomPositiveFloat = (a, b, digits = 1) => {
   return +result.toFixed(digits);
 };
 
-const getRandomArrayElement = (elements) => {
-  return elements[getRandomPositiveInteger(0, elements.length - 1)];
-};
+const getRandomArrayElement = (elements) => elements[getRandomPositiveInteger(0, elements.length - 1)];
 
-export {getRandomPositiveInteger, getRandomPositiveFloat, getRandomArrayElement};
+/**
+ * возвращает случайное булевое значение
+ * @returns {boolean}
+ */
+const getRandomBoolean = () => Math.random() > 0.5;
+
+/**
+ * возвращает случайные элементы массива
+ * @param {Array} elements
+ * @returns {Array}
+ */
+const getRandomArrayElements = (elements) => elements.filter(() => getRandomBoolean());
+
+/**
+ * функция возвращает число с лидирующим нулём если число меньше десяти
+ * функция возвращает строку
+ * @param {number} number - исходное число
+ * @returns {string}
+ */
+const leadingZero = (number) => (number < 10) ? `0${number}` : String(number);
+
+export {getRandomPositiveInteger, getRandomPositiveFloat, getRandomArrayElement, getRandomArrayElements, leadingZero};
