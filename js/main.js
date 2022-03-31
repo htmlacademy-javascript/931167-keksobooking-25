@@ -1,3 +1,3 @@
 import {createUserCard} from './mocks.js';
 
-console.log(createUserCard);
+// console.log(createUserCard);
