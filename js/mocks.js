@@ -1,12 +1,6 @@
-import {OFFERS_COUNT, OFFER_TITLES, OFFER_TYPES,
-  OFFER_CHECKINS, OFFER_CHECKOUTS, OFFER_FEATURES,
-  OFFER_DESCRIPTIONS, OFFER_PHOTOS, OFFER_LOCATION_MIN_LAT,
-  OFFER_LOCATION_MAX_LAT, OFFER_LOCATION_MIN_LNG,
-  OFFER_LOCATION_MAX_LNG, OFFER_LOCATION_PRECISION} from './data.js';
+import {OFFERS_COUNT, OFFER_TITLES, OFFER_TYPES, OFFER_CHECKINS, OFFER_CHECKOUTS, OFFER_FEATURES, OFFER_DESCRIPTIONS, OFFER_PHOTOS, OFFER_LOCATION_MIN_LAT, OFFER_LOCATION_MAX_LAT, OFFER_LOCATION_MIN_LNG,OFFER_LOCATION_MAX_LNG, OFFER_LOCATION_PRECISION} from './data.js';
 
-import {getRandomPositiveInteger, getRandomPositiveFloat,
-  getRandomArrayElement, getRandomArrayElements,
-  leadingZero} from './util.js'
+import {getRandomPositiveInteger, getRandomPositiveFloat, getRandomArrayElement, getRandomArrayElements, leadingZero} from './util.js'
 
 const makeLocation = () => ({
   lat: getRandomPositiveFloat(OFFER_LOCATION_MIN_LAT, OFFER_LOCATION_MAX_LAT, OFFER_LOCATION_PRECISION),
