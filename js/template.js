@@ -87,6 +87,3 @@ function similarCard(advert) {
 }
 
 export {similarCard};
-
-
-
