@@ -33,7 +33,6 @@ const activeStateFilter = () => {
 
 export {inactiveStateForm, activeStateForm, inactiveStateFilter, activeStateFilter};
 
-
 const validateAdPrice = (value) => {
   const unit = document.querySelector('#type');
   return value >= PriceValue[unit.value] && value <= 100000;
@@ -73,10 +72,8 @@ adType.addEventListener('change', () => {
   onAdTypeChange();
 });
 
-
 // Заблокировать кнопку Отправить на время выполнения запроса к серверу
 // const sendButton = document.querySelector('.ad-form__submit');
-
 
 // sendButton.addEventListener('click', (evt) => {
 //   evt.preventDefault();
@@ -130,7 +127,6 @@ adFormElement.addEventListener('submit', (evt) => {
   }
   console.log('Хуйня, переделывай');
 });
-
 
 const timeChange = () => {
   const timeIn = adFormElement.querySelector('#timein');
