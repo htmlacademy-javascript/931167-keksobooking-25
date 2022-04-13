@@ -7,5 +7,5 @@ import {inactiveStateForm} from './form-validator.js';
 const mapCanvas = document.querySelector('#map-canvas');
 mapCanvas.append(similarCard(makeAdverts(OFFERS_COUNT)[0]));
 
-// inactiveStateForm();
+inactiveStateForm();
 
