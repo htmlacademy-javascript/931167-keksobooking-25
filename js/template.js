@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 const cardTemplateElement = document.querySelector('#card')
   .content
   .querySelector('.popup');
