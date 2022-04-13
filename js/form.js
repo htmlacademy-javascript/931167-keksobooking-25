@@ -31,8 +31,6 @@ const activeStateFilter = () => {
   adFormFiltersElements.children.forEach((item) => {item.disabled = false;});
 };
 
-export {inactiveStateForm, activeStateForm, inactiveStateFilter, activeStateFilter};
-
 const validateAdPrice = (value) => {
   const unit = document.querySelector('#type');
   return value >= PriceValue[unit.value] && value <= 100000;
@@ -50,7 +48,7 @@ const pristine = new Pristine(adFormElement, {
   errorTextParent: 'form__item',
   errorTextTag: 'span',
   errorTextClass: 'form__error',
-});
+}, false);
 
 pristine.addValidator(
   adPrice,
@@ -71,21 +69,6 @@ const onAdTypeChange = () => {
 adType.addEventListener('change', () => {
   onAdTypeChange();
 });
-
-// Заблокировать кнопку Отправить на время выполнения запроса к серверу
-// const sendButton = document.querySelector('.ad-form__submit');
-
-// sendButton.addEventListener('click', (evt) => {
-//   evt.preventDefault();
-//   inactiveStateForm();
-
-// });
-
-// const pristine = new Pristine(adFormElement, {
-//   classTo: 'ad-form__validate',
-//   errorTextParent: 'ad-form__validate',
-//   errorTextClass: 'ad-form__validate-error-text',
-// });
 
 const roomsCount = adFormElement.querySelector('[name="rooms"]');
 const capacitiesCount = adFormElement.querySelector('[name="capacity"]');
@@ -124,6 +107,8 @@ adFormElement.addEventListener('submit', (evt) => {
 
   if(isValid) {
     console.log('Заебись');
+    adFormElement.submit();
+    return;
   }
   console.log('Хуйня, переделывай');
 });
@@ -137,3 +122,5 @@ const timeChange = () => {
 };
 
 timeChange();
+
+export {inactiveStateForm, activeStateForm, inactiveStateFilter, activeStateFilter};

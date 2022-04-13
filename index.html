@@ -85,18 +85,19 @@
             <p class="ad-form-header__info">Заполните все обязательные поля, назначьте цену, загрузите аватар и фото жилья. Придумайте интересное описание. Оно сделает объявление более живым и привлекательным. Получившееся объявление должно давать гостям полное представление о вашем жилье.</p>
           </div>
         </fieldset>
-        <fieldset class="ad-form__element ad-form__element--wide ad-form__validate">
-          <label class="ad-form__label ad-form__validate" for="title">Заголовок объявления</label>
+        <fieldset class="ad-form__element ad-form__element--wide form__item">
+          <label class="ad-form__label" for="title">Заголовок объявления</label>
           <input id="title" name="title" type="text" placeholder="Милая, уютная квартирка в центре Токио" required minlength="30" maxlength="100" data-pristine-required-message="Обязательное поле"
           data-pristine-minlength-message="Добей до 30 букв"
           data-pristine-maxlength-message="Максим 100, не больше">
         </fieldset>
-        <fieldset class="ad-form__element ad-form__element--wide">
+        <fieldset class="ad-form__element ad-form__element--wide form__item">
           <label class="ad-form__label" for="address">Адрес (координаты)</label>
-          <input id="address" name="address" type="text">
+          <input id="address" name="address" type="text" required
+          data-pristine-required-message="можно ваш адресочек, плес">
         </fieldset>
         <fieldset class="ad-form__element form__item">
-          <label class="ad-form__label form__item" for="type">Тип жилья</label>
+          <label class="ad-form__label" for="type">Тип жилья</label>
           <select id="type" name="type">
             <option value="bungalow">Бунгало</option>
             <option value="flat" selected>Квартира</option>
@@ -106,7 +107,7 @@
           </select>
         </fieldset>
         <fieldset class="ad-form__element ad-form__validate form__item">
-          <label class="ad-form__label ad-form__validate form__item" for="price">Цена за ночь, руб.</label>
+          <label class="ad-form__label ad-form__validate" for="price">Цена за ночь, руб.</label>
           <input id="price" name="price" type="number" placeholder="0">
           <div class="ad-form__slider"></div>
         </fieldset>
@@ -124,7 +125,7 @@
           </select>
         </fieldset>
         <fieldset class="ad-form__element form__item">
-          <label class="ad-form__label form__item" for="room_number">Количество комнат</label>
+          <label class="ad-form__label" for="room_number">Количество комнат</label>
           <select id="room_number" name="rooms" required>
             <option value="1" selected>1 комната</option>
             <option value="2">2 комнаты</option>
@@ -133,7 +134,7 @@
           </select>
         </fieldset>
         <fieldset class="ad-form__element form__item">
-          <label class="ad-form__label form__item" for="capacity">Количество мест</label>
+          <label class="ad-form__label" for="capacity">Количество мест</label>
           <select id="capacity" name="capacity" required>
             <option value="1" selected>для 1 гостя</option>
             <option value="2">для 2 гостей</option>
