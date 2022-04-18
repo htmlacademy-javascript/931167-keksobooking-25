@@ -25,7 +25,6 @@ const featuresConteiner = (element, offersFeatures) => {
   });
 };
 
-
 /**
  *
  * @param {HTMLElement} element
