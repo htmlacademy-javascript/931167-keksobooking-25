@@ -56,7 +56,6 @@ const updateCardElement = (cardElement, selector, attribute, value) => {
   const element = cardElement.querySelector(selector);
 
   if (element === null) {
-    console.log('Элемент не нашли');
     return;
   }
 
